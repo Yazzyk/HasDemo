@@ -1,0 +1,94 @@
+Debug = true
+LogFileName = 'run.log'
+LogOutputs = ['file', 'console']
+Version = '1'
+[APIGateway]
+AddressField = 'IP'
+BreakerDashboard = true
+BreakerErrorPercentThreshold = 10
+BreakerLimitAPI = true
+BreakerLimitIP = true
+BreakerLimitUser = true
+BreakerMaxConcurrentRequest = 10
+BreakerRequestTimeout = 10
+BreakerRequestVolumeThreshold = 10
+BreakerSleepWindow = 10
+Disabled = false
+EID = '42b72128a473438e881e5b4e53c8ab2a'
+UseBreaker = false
+UserField = 'User'
+
+[DataService]
+Disabled = false
+EID = 'e946fb6305874b44a375a030e0f75a68'
+LimitedSlots = ''
+Name = 'data'
+
+[DatabasePlugin]
+Disabled = false
+EID = '2b1c22654bb141b8ae247ae7246a8f54'
+[[DatabasePlugin.Connections]]
+InitData = false
+InitDataAfterSecond = 30
+InitDataDir = '.'
+Key = 'mysql'
+MaxIdleConns = 0
+MaxOpenConns = 0
+Name = 'demo'
+Port = 33060
+Pwd = 'www@admin@2020'
+ReadTimeout = 10
+Reset = false
+Server = '172.16.102.57'
+SingularTable = false
+Type = 'mysql'
+User = 'root'
+WriteTimeout = 10
+
+
+[HelloService]
+Disabled = false
+EID = '12e7f0321f414843847f0dbd7bc13244'
+LimitedSlots = ''
+Name = 'hello'
+
+[JsonPacker]
+Disabled = false
+EID = '7ea759ade4034d1189bca34b8d7357d9'
+
+[LocalRouter]
+Disabled = false
+EID = '8d7cf47c77d845bbaea22849a2f84777'
+
+[Server]
+Disabled = false
+EID = 'e12e44e473834be08cdee8cda258724f'
+MaxProcs = 0
+PprofPort = 6060
+
+[TestService]
+Disabled = false
+EID = '57884b2103834956ac6e523ae7a5cdc0'
+LimitedSlots = ''
+Name = 'test'
+TestBool = true
+TestName = 'HAS'
+
+[WebConnector]
+AddressField = 'IP'
+AppKey = ''
+AppSecret = ''
+BodyLimit = 10
+Disabled = false
+EID = '38f832644e834eb8ad8c46a1c9a0d0c9'
+Lang = ''
+Packer = 'JsonPacker'
+Port = 8989
+SignMethod = ''
+Timeout = 0
+Tls = false
+TlsCertPath = ''
+TlsKeyPath = ''
+WebSocketEnabled = false
+WebSocketUrl = ''
+

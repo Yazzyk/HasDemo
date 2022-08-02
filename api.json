@@ -1,0 +1,73 @@
+{
+  "name": "HAS api",
+  "versions": [
+    {
+      "version": "v1",
+      "apis": [
+        {
+          "name": "hello",
+          "desc": "hello",
+          "disabled": false,
+          "endpoint": {
+            "service": "hello",
+            "slot": "HelloSlot"
+          }
+        },
+        {
+          "name": "test",
+          "desc": "test",
+          "disabled": false,
+          "endpoint": {
+            "service": "test",
+            "slot": "TestSlot"
+          }
+        },
+        {
+          "name": "t",
+          "desc": "t",
+          "disabled": false,
+          "endpoint": {
+            "service": "test",
+            "slot": "Test"
+          }
+        },
+        {
+          "name": "queryData",
+          "desc": "数据查询",
+          "disabled": false,
+          "endpoint": {
+            "service": "data",
+            "slot": "Query"
+          }
+        },
+        {
+          "name": "createData",
+          "desc": "保存数据",
+          "disabled": false,
+          "endpoint": {
+            "service": "data",
+            "slot": "Create"
+          }
+        },
+        {
+          "name": "updateData",
+          "desc": "更新数据",
+          "disabled": false,
+          "endpoint": {
+            "service": "data",
+            "slot": "Update"
+          }
+        },
+        {
+          "name": "deleteData",
+          "desc": "更新数据",
+          "disabled": false,
+          "endpoint": {
+            "service": "data",
+            "slot": "Delete"
+          }
+        }
+      ]
+    }
+  ]
+}

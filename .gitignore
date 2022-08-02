@@ -1,0 +1,4 @@
+/pid.pid
+/*.log
+/conf_*.toml
+/.idea/
