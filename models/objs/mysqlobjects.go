@@ -15,8 +15,17 @@ type MyTest struct {
 	Addr  string `json:"addr"`
 }
 
+type MyInfo struct {
+	hdatasvs.DataObject `data:"db:mysql;key:info"`
+
+	ID     uint64 `json:"id" gorm:"primaryKey" data:"primary;deny:create"`
+	TestID uint64 `json:"test_id"`
+	User   string `json:"user" gorm:"size:20" data:"require:create"`
+	Pwd    string `json:"pwd" gorm:"size:50" data:"require:create"`
+}
+
 func Objects() []htypes.Any {
 	return []htypes.Any{
-		MyTest{},
+		MyTest{}, MyInfo{},
 	}
 }
