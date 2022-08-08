@@ -92,3 +92,11 @@ TlsKeyPath = ''
 WebSocketEnabled = false
 WebSocketUrl = ''
 
+[SessionService]
+CheckAgent = false
+CheckIP = false
+CheckUser = false
+MagicToken = 'a1b2@c3d4'
+Name = 'session'
+SessionsPerUser = 1
+TokenExpire = 10080

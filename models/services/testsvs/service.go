@@ -2,6 +2,7 @@ package testsvs
 
 import (
 	"github.com/drharryhe/has/common/herrors"
+	"github.com/drharryhe/has/common/hlogger"
 	"github.com/drharryhe/has/common/htypes"
 	"github.com/drharryhe/has/core"
 	"github.com/drharryhe/has/plugins/hdatabaseplugin"
@@ -30,6 +31,15 @@ func (this *Service) Open(s core.IServer, instance core.IService, args htypes.An
 	// 从插件使用mysql数据库
 	this.db = this.UsePlugin("DatabasePlugin").(*hdatabaseplugin.Plugin).Capability().(map[string]*gorm.DB)["mysql"]
 
+	{
+		result, err := this.Server().RequestService("hello", "HelloSlot", map[string]interface{}{
+			"name": "HAS",
+		})
+		if err != nil {
+			hlogger.Error(err)
+		}
+		hlogger.Info(result)
+	}
 	return nil
 }
 

@@ -66,6 +66,15 @@
             "service": "data",
             "slot": "Delete"
           }
+        },
+        {
+          "name": "view",
+          "desc": "数据查询",
+          "disabled": false,
+          "endpoint": {
+            "service": "data",
+            "slot": "View"
+          }
         }
       ]
     }

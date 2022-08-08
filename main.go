@@ -10,6 +10,7 @@ import (
 	"github.com/drharryhe/has/routers/hlocalrouter"
 	"github.com/drharryhe/has/services/hdatasvs"
 	"github.com/drharryhe/has/services/hellosvs"
+	"github.com/drharryhe/has/services/hsessionsvs"
 )
 
 func main() {
@@ -33,9 +34,10 @@ func main() {
 	// 注册服务
 	gateway.Server().RegisterService(&hellosvs.Service{}, nil)
 	gateway.Server().RegisterService(&testsvs.Service{}, nil)
+	gateway.Server().RegisterService(&hsessionsvs.Service{}, nil)
 	gateway.Server().RegisterService(&hdatasvs.Service{}, &hdatasvs.Options{
 		Hooks:        nil,
-		Views:        nil,
+		Views:        objs.Views(),
 		Objects:      objs.Objects(),
 		FieldFuncMap: nil,
 	})
