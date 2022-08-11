@@ -75,6 +75,14 @@
             "service": "data",
             "slot": "View"
           }
+        },{
+          "name": "login",
+          "desc": "用户登录",
+          "disabled": false,
+          "endpoint": {
+            "service": "ap",
+            "slot": "Login"
+          }
         }
       ]
     }

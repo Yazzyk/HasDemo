@@ -60,11 +60,30 @@ EID = '7ea759ade4034d1189bca34b8d7357d9'
 Disabled = false
 EID = '8d7cf47c77d845bbaea22849a2f84777'
 
+[MemCachePlugin]
+CleanupDuration = 10
+Disabled = false
+EID = '1f81aca2f78d4d0cb8265ffcbf73c48d'
+ExpireDuration = 10
+
 [Server]
 Disabled = false
 EID = 'e12e44e473834be08cdee8cda258724f'
 MaxProcs = 0
 PprofPort = 6060
+
+[SessionService]
+CheckAgent = false
+CheckIP = false
+CheckUser = false
+DatabaseKey = ''
+Disabled = false
+EID = '8a99579371c842d2ab342c7ae0c6477d'
+LimitedSlots = ''
+MagicToken = 'a1b2@c3d4'
+Name = 'session'
+SessionsPerUser = 1
+TokenExpire = 10080
 
 [TestService]
 Disabled = false
@@ -92,11 +111,28 @@ TlsKeyPath = ''
 WebSocketEnabled = false
 WebSocketUrl = ''
 
-[SessionService]
-CheckAgent = false
-CheckIP = false
-CheckUser = false
-MagicToken = 'a1b2@c3d4'
-Name = 'session'
-SessionsPerUser = 1
-TokenExpire = 10080
+[ApAuthService]
+DatabaseKey = ''
+DefaultPwd = 'Qaz@2020'
+Disabled = false
+EID = 'c21f4f863a974fb182c9ae4cf05dc142'
+LimitedSlots = ''
+LockAfterFails = 5
+Name = 'ap'
+OutAddressField = 'ip'
+OutAgentField = 'agent'
+PwdEncoding = 'base64'
+PwdMaxLen = 8
+PwdMinLen = 6
+PwdNumberAndLetter = false
+PwdSecret = ''
+PwdSymbol = false
+PwdSymbols = '{{base64:JF4mKigpPXx7fSc6IVtdXy0rfi48Pg==}}'
+PwdUpperAndLowerLetter = false
+SessionCreateSlot = 'CreateToken'
+SessionRevokeSlot = 'RevokeToken'
+SessionService = 'session'
+SessionVerifySlot = 'VerifyToken'
+SuperFails = 3
+SuperName = 'root'
+SuperPwd = 'dd6e5e5918e94d997c686fcebc56922f'
