@@ -18,6 +18,33 @@ EID = '42b72128a473438e881e5b4e53c8ab2a'
 UseBreaker = false
 UserField = 'User'
 
+[ApAuthService]
+DatabaseKey = ''
+DefaultPwd = 'Qaz@2020'
+Disabled = false
+EID = 'c21f4f863a974fb182c9ae4cf05dc142'
+LimitedSlots = ''
+LockAfterFails = 5
+Name = 'ap'
+OutAddressField = 'ip'
+OutAgentField = 'agent'
+PwdEncoding = 'base64'
+PwdMaxLen = 8
+PwdMinLen = 6
+PwdNumberAndLetter = false
+PwdSecret = ''
+PwdSymbol = false
+PwdSymbols = '{{base64:JF4mKigpPXx7fSc6IVtdXy0rfi48Pg==}}'
+PwdUpperAndLowerLetter = false
+SessionCreateSlot = 'CreateToken'
+SessionRevokeSlot = 'RevokeToken'
+SessionService = 'session'
+SessionVerifySlot = 'VerifyToken'
+SuperFailed = 0
+SuperFails = 3
+SuperName = 'root'
+SuperPwd = 'dd6e5e5918e94d997c686fcebc56922f'
+
 [DataService]
 Disabled = false
 EID = 'e946fb6305874b44a375a030e0f75a68'
@@ -45,6 +72,22 @@ Type = 'mysql'
 User = 'root'
 WriteTimeout = 10
 
+
+[FileService]
+CleanFs = false
+DatabaseKey = ''
+Disabled = false
+EID = '9e200ad9094c40de9bed3caa09cf992d'
+Hash = 'sha256'
+LimitedSlots = ''
+MinioBucket = 'default'
+Name = 'file'
+Storage = 'fs'
+
+[HASDemoPlugin]
+Disabled = false
+EID = 'a1aba05d8dc844ab98785505e54aea9a'
+Name = 'HAS'
 
 [HelloService]
 Disabled = false
@@ -97,7 +140,7 @@ TestName = 'HAS'
 AddressField = 'IP'
 AppKey = ''
 AppSecret = ''
-BodyLimit = 10
+BodyLimit = 999999
 Disabled = false
 EID = '38f832644e834eb8ad8c46a1c9a0d0c9'
 Lang = ''
@@ -111,28 +154,3 @@ TlsKeyPath = ''
 WebSocketEnabled = false
 WebSocketUrl = ''
 
-[ApAuthService]
-DatabaseKey = ''
-DefaultPwd = 'Qaz@2020'
-Disabled = false
-EID = 'c21f4f863a974fb182c9ae4cf05dc142'
-LimitedSlots = ''
-LockAfterFails = 5
-Name = 'ap'
-OutAddressField = 'ip'
-OutAgentField = 'agent'
-PwdEncoding = 'base64'
-PwdMaxLen = 8
-PwdMinLen = 6
-PwdNumberAndLetter = false
-PwdSecret = ''
-PwdSymbol = false
-PwdSymbols = '{{base64:JF4mKigpPXx7fSc6IVtdXy0rfi48Pg==}}'
-PwdUpperAndLowerLetter = false
-SessionCreateSlot = 'CreateToken'
-SessionRevokeSlot = 'RevokeToken'
-SessionService = 'session'
-SessionVerifySlot = 'VerifyToken'
-SuperFails = 3
-SuperName = 'root'
-SuperPwd = 'dd6e5e5918e94d997c686fcebc56922f'

@@ -1,6 +1,7 @@
 package testsvs
 
 import (
+	"HASDemo/plugin/hasdemoplugin"
 	"github.com/drharryhe/has/common/herrors"
 	"github.com/drharryhe/has/common/htypes"
 	"github.com/drharryhe/has/core"
@@ -29,7 +30,7 @@ func (this *Service) Open(s core.IServer, instance core.IService, args htypes.An
 	}
 	// 从插件使用mysql数据库
 	this.db = this.UsePlugin("DatabasePlugin").(*hdatabaseplugin.Plugin).Capability().(map[string]*gorm.DB)["mysql"]
-
+	this.UsePlugin("HASDemoPlugin").(*hasdemoplugin.Plugin).Test()
 	return nil
 }
 

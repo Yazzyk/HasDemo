@@ -75,13 +75,32 @@
             "service": "data",
             "slot": "View"
           }
-        },{
+        },
+        {
           "name": "login",
           "desc": "用户登录",
           "disabled": false,
           "endpoint": {
             "service": "ap",
             "slot": "Login"
+          }
+        },
+        {
+          "name": "download",
+          "desc": "文件下载",
+          "disabled": false,
+          "endpoint": {
+            "service": "file",
+            "slot": "Download"
+          }
+        },
+        {
+          "name": "upload",
+          "desc": "文件下载",
+          "disabled": false,
+          "endpoint": {
+            "service": "file",
+            "slot": "Upload"
           }
         }
       ]

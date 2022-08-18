@@ -4,6 +4,7 @@ import (
 	"HASDemo/hooks"
 	"HASDemo/models/objs"
 	"HASDemo/models/services/testsvs"
+	"HASDemo/plugin/hasdemoplugin"
 	"github.com/drharryhe/has/connectors/hwebconnector"
 	"github.com/drharryhe/has/core"
 	"github.com/drharryhe/has/datapackers/hjsonpacker"
@@ -13,11 +14,12 @@ import (
 	"github.com/drharryhe/has/services/hapauthsvs"
 	"github.com/drharryhe/has/services/hdatasvs"
 	"github.com/drharryhe/has/services/hellosvs"
+	"github.com/drharryhe/has/services/hfilesvs"
 	"github.com/drharryhe/has/services/hsessionsvs"
 )
 
 func main() {
-	// 创建gateway
+	// 创建 gateway
 	gateway := core.NewAPIGateway(&core.APIGatewayOptions{
 		// Server配置
 		ServerOptions: core.ServerOptions{
@@ -26,6 +28,7 @@ func main() {
 			Plugins: []core.IPlugin{
 				hdatabaseplugin.New(),
 				hmemcacheplugin.New(),
+				hasdemoplugin.New(),
 			},
 		},
 		Connectors: []core.IAPIConnector{
@@ -47,7 +50,11 @@ func main() {
 	})
 	gateway.Server().RegisterService(&hapauthsvs.Service{}, &hapauthsvs.Options{
 		Hooks: &hooks.ApHooks{},
+		PasswordEncoder: func(pwd string) string {
+			return "HAS_" + pwd
+		},
 	})
+	gateway.Server().RegisterService(&hfilesvs.Service{}, nil)
 	// 启动服务
 	gateway.Start()
 }
