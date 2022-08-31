@@ -1,0 +1,10 @@
+[
+  {
+    "desc": "不允许name为HAS切change为false",
+    "disabled": false,
+    "version": "v1",
+    "api": "test",
+    "if": "name=='HAS' && change==false",
+    "condition": "CheckTest(name, change)"
+  }
+]

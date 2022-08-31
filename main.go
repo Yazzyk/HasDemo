@@ -2,12 +2,15 @@ package main
 
 import (
 	"HASDemo/hooks"
+	"HASDemo/middleware"
+	"HASDemo/middleware/testmiddleware"
 	"HASDemo/models/objs"
 	"HASDemo/models/services/testsvs"
 	"HASDemo/plugin/hasdemoplugin"
 	"github.com/drharryhe/has/connectors/hwebconnector"
 	"github.com/drharryhe/has/core"
 	"github.com/drharryhe/has/datapackers/hjsonpacker"
+	"github.com/drharryhe/has/middlewares/hpermmw"
 	"github.com/drharryhe/has/plugins/hdatabaseplugin"
 	"github.com/drharryhe/has/plugins/hmemcacheplugin"
 	"github.com/drharryhe/has/routers/hlocalrouter"
@@ -33,6 +36,10 @@ func main() {
 		},
 		Connectors: []core.IAPIConnector{
 			hwebconnector.New(nil), // Web服务
+		},
+		Middlewares: []core.IAPIMiddleware{
+			hpermmw.New(middleware.NewPermFuncWrapper()),
+			testmiddleware.New(),
 		},
 		Packers: []core.IAPIDataPacker{
 			hjsonpacker.New(),

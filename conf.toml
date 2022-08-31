@@ -103,17 +103,46 @@ EID = '7ea759ade4034d1189bca34b8d7357d9'
 Disabled = false
 EID = '8d7cf47c77d845bbaea22849a2f84777'
 
+[LockerMiddleware]
+APIList = ['v1:login,addUser']
+AddressField = ''
+Disabled = false
+EID = '03d8a5e4eb1a4f2c93ca0c32182eae01'
+LockDuration = 0
+MaxFails = 10
+Model = 'whitelist'
+UserField = 'User'
+
 [MemCachePlugin]
 CleanupDuration = 10
 Disabled = false
 EID = '1f81aca2f78d4d0cb8265ffcbf73c48d'
 ExpireDuration = 10
 
+[PermMiddleware]
+Disabled = false
+EID = '3daa1c3f297f4e17a7614392c332da20'
+
 [Server]
 Disabled = false
 EID = 'e12e44e473834be08cdee8cda258724f'
 MaxProcs = 0
 PprofPort = 6060
+
+[SessionMiddleware]
+APIWhiteList = ['v1:login,addUser']
+Disabled = false
+EID = '8b074664f8c642e18ef4366e0e8134b8'
+InAddressField = 'IP'
+InAgentField = 'Agent'
+InTokenField = 'Token'
+InUserField = 'User'
+OutAddressField = 'ip'
+OutAgentField = 'agent'
+OutTokenField = 'token'
+OutUserField = 'user'
+SessionService = 'session'
+VerifySlot = 'VerifyToken'
 
 [SessionService]
 CheckAgent = false
@@ -127,6 +156,10 @@ MagicToken = 'a1b2@c3d4'
 Name = 'session'
 SessionsPerUser = 1
 TokenExpire = 10080
+
+[TestMiddleware]
+Disabled = false
+EID = '3e1315d22300460483da277221373582'
 
 [TestService]
 Disabled = false
