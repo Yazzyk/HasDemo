@@ -12,7 +12,7 @@ func New() core.IAPIMiddleware {
 }
 
 type Middleware struct {
-	core.InMiddleware
+	core.InOutMiddleware
 	conf      TestMiddleware
 }
 
