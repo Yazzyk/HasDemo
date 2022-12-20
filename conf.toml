@@ -40,12 +40,13 @@ SessionCreateSlot = 'CreateToken'
 SessionRevokeSlot = 'RevokeToken'
 SessionService = 'session'
 SessionVerifySlot = 'VerifyToken'
-SuperFailed = 0
+SuperFailed = 1
 SuperFails = 3
 SuperName = 'root'
 SuperPwd = 'dd6e5e5918e94d997c686fcebc56922f'
 
 [DataService]
+AutoMigrate = false
 Disabled = false
 EID = 'e946fb6305874b44a375a030e0f75a68'
 LimitedSlots = ''
@@ -66,7 +67,7 @@ Port = 33060
 Pwd = 'www@admin@2020'
 ReadTimeout = 10
 Reset = false
-Server = '172.16.10.214'
+Server = '172.16.102.57'
 SingularTable = false
 Type = 'mysql'
 User = 'root'
@@ -145,6 +146,7 @@ SessionService = 'session'
 VerifySlot = 'VerifyToken'
 
 [SessionService]
+AutoMigrate = false
 CheckAgent = false
 CheckIP = false
 CheckUser = false
@@ -177,13 +179,15 @@ BodyLimit = 999999
 Disabled = false
 EID = '38f832644e834eb8ad8c46a1c9a0d0c9'
 Lang = ''
+Name = 'web'
 Packer = 'JsonPacker'
-Port = 8989
+Port = 8888
 SignMethod = ''
 Timeout = 0
 Tls = false
 TlsCertPath = ''
 TlsKeyPath = ''
-WebSocketEnabled = false
-WebSocketUrl = ''
+WebSocketEnabled = true
+WsTokenField = 'Token'
+WsUserField = 'User'
 

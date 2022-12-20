@@ -35,7 +35,7 @@ func main() {
 			},
 		},
 		Connectors: []core.IAPIConnector{
-			hwebconnector.New(nil), // Web服务
+			hwebconnector.New(), // Web服务
 		},
 		Middlewares: []core.IAPIMiddleware{
 			hpermmw.New(middleware.NewPermFuncWrapper()),
@@ -48,7 +48,7 @@ func main() {
 	// 注册服务
 	gateway.Server().RegisterService(&hellosvs.Service{}, nil)
 	gateway.Server().RegisterService(&hsessionsvs.Service{}, nil)
-	gateway.Server().RegisterService(&testsvs.Service{}, nil)
+	gateway.Server().RegisterService(&testsvs.Service{}, gateway)
 	gateway.Server().RegisterService(&hdatasvs.Service{}, &hdatasvs.Options{
 		Hooks:        nil,
 		Views:        objs.Views(),

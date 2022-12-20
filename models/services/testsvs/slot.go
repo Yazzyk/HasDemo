@@ -3,6 +3,8 @@ package testsvs
 import (
 	"github.com/drharryhe/has/common/herrors"
 	"github.com/drharryhe/has/common/hlogger"
+	"github.com/drharryhe/has/common/htypes"
+	"github.com/drharryhe/has/connectors/hwebconnector"
 	"github.com/drharryhe/has/core"
 )
 
@@ -30,5 +32,35 @@ func (this *Service) TestSlot(req *TestRequest, res *core.SlotResponse) {
 	this.Response(res, map[string]interface{}{
 		"change":     *req.Change,
 		"resultName": resultName,
+	}, nil)
+}
+
+
+type WsTestRequest struct {
+	core.SlotWsRequestBase
+
+	Msg *string `json:"msg" param:"require"`
+}
+
+func (this *Service) WsTestSlot(req *WsTestRequest, res *core.SlotResponse) {
+	// 创建ws连接
+	if *req.INITWS {
+		hlogger.Info("初始化连接")
+		//res.Error = herrors.ErrSysInternal.New("可返回错误，返回错误会直接断开连接")
+		return
+	}
+
+	if *req.BREAK {
+		hlogger.Info("连接断开")
+		return
+	}
+	// 后续的消息处理
+	// ...
+	// 向客户端发送消息
+	//res.Error = herrors.ErrSysInternal.New("可返回错误，返回错误会直接断开连接")
+	// 可通过 CloseWsConn 方法关闭连接
+	//this.gateway.Connectors()["web"].(*hwebconnector.Connector).CloseWsConn(*req.WsID)
+	this.gateway.Connectors()["web"].(*hwebconnector.Connector).SendWsResponse(*req.WsID, htypes.Map{
+		"request_msg": *req.Msg,
 	}, nil)
 }

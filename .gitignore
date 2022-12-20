@@ -2,3 +2,5 @@
 /*.log
 /conf_*.toml
 /.idea/
+**/.DS_Store
+media/

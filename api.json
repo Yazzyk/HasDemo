@@ -102,6 +102,15 @@
             "service": "file",
             "slot": "Upload"
           }
+        },
+        {
+          "name": "wsTest",
+          "desc": "websocket",
+          "disabled": false,
+          "endpoint": {
+            "service": "test",
+            "slot": "WsTestSlot"
+          }
         }
       ]
     }
