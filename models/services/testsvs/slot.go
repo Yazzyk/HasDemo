@@ -14,7 +14,6 @@ type TestRequest struct {
 	Name   *string `json:"name" param:"require"`   // 名称
 	Change *bool   `json:"change" param:"require"` // 是否改变name param:"require"代表此字段必传
 }
-// 我们建议在项目开发中，开发者为此处的每个字段都写上注释，便于后期维护
 
 func (this *Service) TestSlot(req *TestRequest, res *core.SlotResponse) {
 	hlogger.Info("request name:", *req.Name) // HAS中带有log组件可以直接使用
